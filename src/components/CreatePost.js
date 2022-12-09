@@ -37,7 +37,7 @@ function CreatePost() {
 
         <div className="form-field">
           <label>Content</label>
-          <textarea {...content}></textarea>
+          <textarea id="cr"{...content } ></textarea>
         </div>
 
         <button className="create-post-btn">Create Post</button>
