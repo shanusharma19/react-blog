@@ -8,8 +8,8 @@ function Home() {
   useEffect(() => {
     firestore
       .collection('posts')
-      .get()
-      .then((snapshot) => {
+      .orderBy("createdAt","desc")
+      .onSnapshot((snapshot) => {
         const posts = snapshot.docs.map((doc) => {
           return {
             id: doc.id,
@@ -32,7 +32,6 @@ function Home() {
           <Link to={`/post/${post.id}`}>
             <h3>{post.title}</h3>
           </Link>
-
           <p>{post.subTitle}</p>
         </div>
       ))}
